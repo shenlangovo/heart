@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>爱心</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #000;
+        }
+        .heart {
+            width: 100px;
+            height: 100px;
+            background: #ff3e6c;
+            position: relative;
+            transform: rotate(45deg);
+            animation: beat 1.5s infinite;
+        }
+        .heart::before, .heart::after {
+            content: '';
+            width: 100px;
+            height: 100px;
+            background: #ff3e6c;
+            border-radius: 50%;
+            position: absolute;
+        }
+        .heart::before {
+            top: -50px;
+            left: 0;
+        }
+        .heart::after {
+            top: 0;
+            left: -50px;
+        }
+        /* 心跳动画 */
+        @keyframes beat {
+            0% { transform: rotate(45deg) scale(1); }
+            50% { transform: rotate(45deg) scale(1.2); }
+            100% { transform: rotate(45deg) scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="heart"></div>
+</body>
+</html>
